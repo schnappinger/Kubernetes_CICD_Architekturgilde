@@ -8,7 +8,7 @@ name: Build image and push to ECR
 
 jobs:
   build:
-    name: 'Build Image'
+    name: 'Update Image'
     runs-on: ubuntu-latest
     steps:
     # checkout the repo
