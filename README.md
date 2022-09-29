@@ -1,6 +1,6 @@
 # Kubernetes_CICD_Architekturgilde_Nuernberg
 
-1. Login to AWS
+## Login to AWS
 
   Log into AWS using the Account, IAM user and credentials you were provided withhttps://eu-central-1.console.aws.amazon.com/console/home?region=eu-central-1# 
   You will be prompted to change your password after the initial login
@@ -10,7 +10,7 @@
   Navigate to the EC2 Dashboard by using the search bar
 
 
-2. Launch EC2 instance
+## Launch EC2 instance
 
   Click on Launch instance in the EC2 Dashboard
   Select a unique name for your instance, e.g. your name (it can be changed later, IF you know which instance is yours)
@@ -21,7 +21,7 @@
 
   Configure your storage to 8 GiB of gp2
 
-3. Start MiniKube Cluster
+## Start MiniKube Cluster
   
   Connect to your instance via EC2 Instance Connect
   User name: root
@@ -32,14 +32,14 @@
   Execute "minikube start"
   Execute "kubectl get namespaces" to see if everything works
 
-4. Deploy your first container application
+## Deploy your first container application
   
   kubectl run hello-world --image=gcr.io/google_containers/echoserver:1.4 --port=8080
   kubectl get pods -o wide
   kubectl exec -i -t hello-world -- /bin/bash
   curl <pod-ip-address>:8080
   
-5. GitHub Actions
+## GitHub Actions
   
   In GitHub, got to "Actions", click on "Build image and push to ECR"
   Click on "Run workflow"
