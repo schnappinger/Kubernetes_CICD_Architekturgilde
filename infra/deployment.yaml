@@ -15,7 +15,9 @@ spec:
       containers:
         - name: nginx-container
           imagePullPolicy: Always
-          image: nginx:latest
+          image: 275852535211.dkr.ecr.eu-central-1.amazonaws.com/workshop-images:test-image
+          imagePullSecret: 
+            - name: image-pull-secret
           resources:
             limits:
               cpu: 50m
