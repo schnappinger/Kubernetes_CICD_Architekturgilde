@@ -27,17 +27,17 @@
   User name: root
   A SSH connection will be opened in a new tab
   
-  Execute "service docker start"
-  Execute "su ec2-user"
-  Execute "minikube start"
-  Execute "kubectl get namespaces" to see if everything works
+  Run `service docker start`
+  Run `su ec2-user`
+  Run `minikube start`
+  Run `kubectl get namespaces` to see if everything works
 
 ## Deploy your first container application
   
-  kubectl run hello-world --image=gcr.io/google_containers/echoserver:1.4 --port=8080
-  kubectl get pods -o wide
-  kubectl exec -i -t hello-world -- /bin/bash
-  curl <pod-ip-address>:8080
+  Run `kubectl run hello-world --image=gcr.io/google_containers/echoserver:1.4 --port=8080`
+  Run `kubectl get pods -o wide`
+  Run `kubectl exec -i -t hello-world -- /bin/bash`
+  Run `curl <pod-ip-address>:8080`
   
 ## GitHub Actions
   
