@@ -99,7 +99,7 @@
   
   Run `flux bootstrap github --owner=<your-github-account> --repository=Kubernetes_CICD_Architekturgilde_Nuernberg --path=flux-integration/flux-system --personal`
   
-  Run `flux create source git my-flux-source --url=https://github.com/ChristopherDankertCap/Kubernetes_CICD_Architekturgilde_Nuernberg --branch=main --interval=30s`
+  Run `flux create source git my-flux-source --url=https://github.com/<your GitHub username>/Kubernetes_CICD_Architekturgilde_Nuernberg --branch=main --interval=30s`
   
   Run `flux create kustomization my-kustomization --target-namespace=default --source=my-flux-source --path="./infra" --prune=true --interval=5m`
   
