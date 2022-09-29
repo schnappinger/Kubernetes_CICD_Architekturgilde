@@ -89,16 +89,20 @@
   
   SSH into your EC2 instance as ec2-user
   
-  `cd .. `
+  Run `cd .. `
   
-  `curl -s https://fluxcd.io/install.sh | sudo bash`
+  Run `curl -s https://fluxcd.io/install.sh | sudo bash`
   
-  `. <(flux completion bash)`
+  Run `. <(flux completion bash)`
   
-  `export GITHUB_TOKEN=<your github token>`
+  Run `export GITHUB_TOKEN=<your github token>`
   
-  `flux bootstrap github --owner=<your-github-account> --repository=Kubernetes_CICD_Architekturgilde_Nuernberg --path=flux-integration/flux-system --personal`
+  Run `flux bootstrap github --owner=<your-github-account> --repository=Kubernetes_CICD_Architekturgilde_Nuernberg --path=flux-integration/flux-system --personal`
   
-  `flux create source git my-flux-source --url=https://github.com/ChristopherDankertCap/Kubernetes_CICD_Architekturgilde_Nuernberg --branch=main --interval=30s`
+  Run `flux create source git my-flux-source --url=https://github.com/ChristopherDankertCap/Kubernetes_CICD_Architekturgilde_Nuernberg --branch=main --interval=30s`
   
-  `flux create kustomization my-kustomization --target-namespace=default --source=my-flux-source --path="./infra" --prune=true --interval=5m`
+  Run `flux create kustomization my-kustomization --target-namespace=default --source=my-flux-source --path="./infra" --prune=true --interval=5m`
+  
+  Flux should now automatically create a deployment in your default namespace in Kubernetes:
+  
+  Run `kubectl get deployment`
