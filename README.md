@@ -55,10 +55,50 @@
   
   Run `curl <pod-ip-address>:8080`
   
+## Configure GitHub with your AWS credentials
+  
+  Fork the repo Kubernetes_CICD_Architekturgilde_Nuernberg
+  
+  In your GitHub repository, go to Settings -> Secrets (under Security) -> Actions
+  
+  Create new repository secrets:
+  
+  Key: AWS_ACCESS_KEY_ID    Value: <your aws access key>
+  
+  Key: AWS_SECRET_ACCESS_KEY    Value: <your aws secret access key>
+  
 ## GitHub Actions
   
   In GitHub, got to "Actions", click on "Build image and push to ECR"
   
   Click on "Run workflow"
   
+  The workflow should automatically build a basic nginx docker image and replace the index.html file with the one in our repo under app/index.html.
+  The image will then be pushed onto the configured ECR (Elastic Container Registry) in AWS with a predefined tag.
   
+## Install FluxCD on your K8s cluster
+  
+  In GitHub, create a personal access token (PAT): Click on your account (top right) -> Settings -> Developer Settings -> Personal access tokens -> Generate new token
+  
+  Grant repository access:
+  
+  ![image](https://user-images.githubusercontent.com/113344386/192984686-cb9baf0b-13e7-4c63-bb7e-588261d5fa10.png)
+  
+  Save the key somewhere!
+  
+  
+  SSH into your EC2 instance as ec2-user
+  
+  `cd .. `
+  
+  `curl -s https://fluxcd.io/install.sh | sudo bash`
+  
+  `. <(flux completion bash)`
+  
+  `export GITHUB_TOKEN=<your github token>`
+  
+  `flux bootstrap github --owner=<your-github-account> --repository=Kubernetes_CICD_Architekturgilde_Nuernberg --path=flux-integration/flux-system --personal`
+  
+  `flux create source git my-flux-source --url=https://github.com/ChristopherDankertCap/Kubernetes_CICD_Architekturgilde_Nuernberg --branch=main --interval=30s`
+  
+  `flux create kustomization my-kustomization --target-namespace=default --source=my-flux-source --path="./infra" --prune=true --interval=5m`
