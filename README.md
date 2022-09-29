@@ -97,7 +97,7 @@
   
   Run `export GITHUB_TOKEN=<your github token>`
   
-  Run `flux bootstrap github --owner=<your-github-account> --repository=Kubernetes_CICD_Architekturgilde_Nuernberg --path=flux-integration/flux-system --personal`
+  Run `flux bootstrap github --owner=<your-github-account> --repository=Kubernetes_CICD_Architekturgilde_Nuernberg --path=flux-integration --personal`
   
   Run `flux create source git my-flux-source --url=https://github.com/<your GitHub username>/Kubernetes_CICD_Architekturgilde_Nuernberg --branch=main --interval=30s`
   
