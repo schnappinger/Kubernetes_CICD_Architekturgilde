@@ -13,11 +13,17 @@
 ## Launch EC2 instance
 
   Click on Launch instance in the EC2 Dashboard
+  
   Select a unique name for your instance, e.g. your name (it can be changed later, IF you know which instance is yours)
+  
   Under Application and OS Images, go to My AMIs and select minikube-VM (available under “Owned by me”)
+  
   Under Instance type, select t2.medium
+  
   Create an own Key pair to connect to your instance, make sure to give it a unique name (e.g. <yourname>-ssh)
+  
   Edit the Network settings:
+  
   ![image](https://user-images.githubusercontent.com/113344386/192980055-acb8cc7c-793a-487a-980c-bee7631a0598.png)
 
 
@@ -52,6 +58,7 @@
 ## GitHub Actions
   
   In GitHub, got to "Actions", click on "Build image and push to ECR"
+  
   Click on "Run workflow"
   
   
