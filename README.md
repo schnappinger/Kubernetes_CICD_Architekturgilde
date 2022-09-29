@@ -8,7 +8,6 @@
   Switch the selected region to eu-central-1
 
   Navigate to the EC2 Dashboard by using the search bar
-  ![image](https://user-images.githubusercontent.com/113344386/192960747-65e941c4-a91d-45bb-995d-f190a4c6d7c9.png)
 
 
 2. Launch EC2 instance
@@ -19,7 +18,6 @@
   Under Instance type, select t2.medium
   Create an own Key pair to connect to your instance, make sure to give it a unique name (e.g. <yourname>-ssh)
   Edit the Network settings, it should look like this:
-  ![image](https://user-images.githubusercontent.com/113344386/192960858-7026e373-6f9f-4337-af12-142cb4df3041.png)
 
   Configure your storage to 8 GiB of gp2
 
