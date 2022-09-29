@@ -2,7 +2,7 @@
 
 ## Login to AWS
 
-  Log into AWS using the Account, IAM user and credentials you were provided withhttps://eu-central-1.console.aws.amazon.com/console/home?region=eu-central-1# 
+  Log into AWS using the Account, IAM user and credentials you were provided with https://eu-central-1.console.aws.amazon.com/console/home?region=eu-central-1# 
   You will be prompted to change your password after the initial login
 
   Switch the selected region to eu-central-1
